@@ -7,11 +7,9 @@ class PhotoGrid extends React.Component {
     console.log(this.props.post);
     return (
       <div className="photo-grid">
-        <ul>
-          {this.props.post.map((post, i) =>
-            <Photo {...this.props} key={i} i={i} post={post} />
-          )}
-        </ul>;
+        {this.props.post.map((post, i) =>
+          <Photo {...this.props} key={i} i={i} post={post} />
+        )}
       </div>
     );
   }
