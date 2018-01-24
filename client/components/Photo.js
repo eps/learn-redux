@@ -6,6 +6,9 @@ class Photo extends React.Component {
 
   render() {
     const { post, i, comments } = this.props;
+
+    console.log('photo', post);
+    
     return (
         <figure className="grid-figure">
           <div className="grid-photo-wrap">
