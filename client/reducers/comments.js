@@ -14,7 +14,6 @@ export default comments;
 
 // reducer composition
 function postComments(state = [], action) {
-  console.log('post comment', state, action);
   switch(action.type) {
     case 'ADD_COMMENT' :
     return [...state,{
@@ -22,6 +21,11 @@ function postComments(state = [], action) {
       text: action.comment
     }];
     case 'REMOVE_COMMENT' :
+      console.log('removing comment at index', state,action)
+      // we need to return the array without the deleted comment
+      return [...state.slice(0, action.index),
+        ...state.slice(action.index + 1)
+      ]
       return state;
     default:
       return state;
